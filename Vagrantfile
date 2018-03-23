@@ -15,9 +15,9 @@ Vagrant.configure(2) do |config|
     dev.vm.network "private_network", ip: "10.100.199.200" 
 #    dev.vm.network "private_network", type: "dhcp"
     dev.vm.provision :shell, path: "bootstrap.sh"
-#    dev.vm.provision :shell,
-#      inline: 'PYTHONUNBUFFERED=1 ansible-playbook \
-#        /vagrant/ansible/dev.yml -c local'
+    dev.vm.provision :shell,
+      inline: 'PYTHONUNBUFFERED=1 ansible-playbook \
+        /vagrant/ansible/dev.yml -c local'
   end
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
