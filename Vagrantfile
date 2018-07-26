@@ -9,10 +9,10 @@ Vagrant.configure(2) do |config|
     config.vm.synced_folder ".", "/vagrant"
   end
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
+    v.memory = 1048
   end
   config.vm.define :dev do |dev|
-    dev.vm.network "private_network", ip: "10.100.199.200" 
+    dev.vm.network "private_network", ip: "10.100.199.201" 
 #    dev.vm.network "private_network", type: "dhcp"
     dev.vm.provision :shell, path: "bootstrap.sh"
     dev.vm.provision :shell,
